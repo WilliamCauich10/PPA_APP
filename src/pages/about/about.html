@@ -1,0 +1,17 @@
+<!-- Login  -->
+<ion-content padding>
+	 <form [formGroup]="myForm" (ngSubmit)="saveData()">
+ <ion-list>
+	   <img src="assets/imagenes/perfil.png" style="height: 60%; width: 70%; margin-left: 15%;" >
+  <ion-item>
+    <ion-label floating>Correo</ion-label>
+    <ion-input formControlName="name" type="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label floating>Contraseña</ion-label>
+    <ion-input formControlName="password" type="password" ></ion-input>
+  </ion-item>
+</ion-list>
+  <button ion-button block type="submit" [disabled]="!myForm.valid">Iniciar</button>
+</form>
+</ion-content>

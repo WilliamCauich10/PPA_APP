@@ -1,0 +1,85 @@
+<!--
+  Grafica
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Graficas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+  <ion-item>
+    <ion-label>Tipo</ion-label>
+    <ion-select [(ngModel)]="gaming" submitText="Aceptar" cancelText="Cancelar">
+      <ion-option value="1">Captura</ion-option>
+      <ion-option value="2">Recepcionado</ion-option>
+      <ion-option value="3">Seguimiento</ion-option>
+      <ion-option value="4">Resuelto</ion-option>
+      <ion-option value="5">Rechazado</ion-option>
+      <ion-option value="6">Eliminado</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+  	<ion-label>Fecha Inicio</ion-label>
+  		<ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeStarts"></ion-datetime>
+  </ion-item>
+  <ion-item>
+  	<ion-label>Fecha Fin</ion-label>
+  		<ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.timeEnds"></ion-datetime>
+  </ion-item>
+  <button ion-button full color="secondary" (click)="showConfirm(gaming,event.timeStarts,event.timeEnds)"> Generar</button>
+</ion-list>
+<label>{{grafif}}</label>
+<table>
+  <tr>
+    <!-- 15,135,,34 -->
+    <td style="width: 15px; height: 34px; background:rgba(255, 99, 132, 0.2)">1</td>
+    <td style=" width: 135px; ">COZUMEL</td>
+    <td style="width: 15px; height: 34px; background: rgb(68, 225, 33, 0.2);">7</td>
+    <td>LÁZARO CÁRDENAS</td>
+  </tr>
+  <tr>
+    <td style="width: 15px; height: 34px; background:rgba(54, 162, 235, 0.2)">2</td>
+    <td>FELIPE CARRILLO PUERTO</td>
+    <td style="background: rgb(127, 56, 68, 0.2);">8</td>
+    <td> SOLIDARIDAD </td>
+  </tr>
+  <tr>
+    <td style="width: 15px; height: 34px; background:rgba(255, 206, 86, 0.2)">3</td>
+    <td>ISLA MUJERES</td>
+    <td style="background: rgb(5, 252, 136, 0.2);">9</td>
+    <td>TULUM  </td>
+  </tr>
+  <tr>
+    <td style="width: 15px; height: 34px; background:rgba(75, 192, 192, 0.2) ">4</td>
+    <td>OTHÓN P. BLANCO</td>
+    <td style="background: rgb(5, 61, 252, 0.2);">10</td>
+    <td>BACALAR</td>
+  </tr>
+  <tr>
+    <td style="width: 15px; height: 34px; background:rgba(153, 102, 255, 0.2)">5</td>
+    <td>BENITO JUÁREZ</td>
+    <td style="background: rgb(199, 0, 57, 0.2);">11</td>
+    <td>PUERTO MORELOS</td>
+   
+  </tr>
+  <tr>
+    <td style="width: 15px; height: 34px; background: rgba(255, 159, 64, 0.2)">6</td>
+    <td>JOSÉ MARÍA MORELOS </td>
+    <td></td>
+  </tr>
+</table>  
+      
+  <ion-card>
+    <ion-card-header>
+      Grafica
+    </ion-card-header>
+    <ion-card-content>
+      <canvas #barCanvas2></canvas>
+    </ion-card-content>
+  </ion-card>
+ 
+</ion-content>

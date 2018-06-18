@@ -1,0 +1,35 @@
+<!-- confirmacion 2 pasos -->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Verificación de dos pasos </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<form [formGroup]="myForm" (ngSubmit)="saveData()">
+	<ion-card>
+	  <ion-card-header>
+	      <img src="assets/imagenes/bloquear.png" style="height: 50%; width: 50%; margin-left: 25%;">
+	  </ion-card-header>
+	  <ion-card-content style="text-align: center;">
+	  	En breve se le enviara un código de verificación de 4 dígitos 
+	    <br>
+	  </ion-card-content>
+
+	</ion-card>
+	<table style="position: center; text-align: center;">
+		<tr>
+			<td style="width: 30%"></td>
+			<td style="width: 40%">
+		<ion-input formControlName="token" type="number" placeholder="____  ____  ____  ____" style="border: none; border-bottom: 2px solid black;"></ion-input>
+				
+			</td>
+			<td style="width: 30%"></td>
+		</tr>
+	</table>
+	<button ion-button block type="submit" [disabled]="!myForm.valid">Verificar</button>
+</form>
+</ion-content>

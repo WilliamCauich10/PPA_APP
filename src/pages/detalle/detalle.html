@@ -1,0 +1,70 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{documentos.SYTD_NOMBRE}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h1>Responsable: {{documentos.DETA_RESPONSABLE}}</h1>
+	<!-- <p>Avance</p>
+	<progress value="50" max="100" style="width: 100%"></progress> -->
+		<!-- {{proyectos.Avance}}% completado -->
+		
+	<h1> Detalles Documento </h1>
+	<h4> Descripción: </h4>
+		{{documentos.DETA_DESCRIPCION}}
+	<h4> Observaciones: </h4>
+		{{documentos.DETA_OBSERVACIONES}}
+	<h4> Anexos: </h4>
+		{{documentos.DETA_ANEXOS}}
+	<h4> Fecha: </h4>
+		{{documentos.DETA_FECHA_RECEPCION}}
+	<h4> N° oficio:</h4>
+		{{documentos.SYTD_ETIQUETA_NUMERO}}
+<!-- Personas -->
+	<h1> Datos de la Persona</h1>
+	<table>
+		<tr>
+			<th style="width: 40%; height: 20%">
+				<label>Nombre </label>
+			</th>
+			<td>{{documentos.DETA_ENTREGO_NOMBRE}}</td>
+		</tr>
+		<tr>
+			<th>
+				<label>Email</label>
+			</th>
+			<td>
+				<label>
+					<a href="mailto:{{documentos.DETA_ENTREGO_EMAIL}}">{{documentos.DETA_ENTREGO_EMAIL}}</a>
+				</label>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<label>Telefono</label>
+			</th>
+			<td>
+				<label>
+					<a href="tel:{{documentos.DETA_ENTREGO_TELEFONO}}">{{documentos.DETA_ENTREGO_TELEFONO}}</a>
+				</label>
+			</td>
+		</tr>
+	</table>
+		<br>
+		<br>
+		<button ion-button icon-right color="secondary"> Descargar  <ion-icon name="md-cloud-download"></ion-icon></button>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons end>
+      <button ion-button icon-right color="royal" (click)="cerrar_sin_parametros()">
+        cerrar
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

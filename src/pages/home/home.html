@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Principal
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-refresher (ionRefresh)="recargar($event)">
+     <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+   <ion-list>
+    <div *ngFor="let user of users">
+      <ion-item  (click)="DetalleDocumento(user)">
+        <ion-avatar item-start>
+          <ion-icon class="Correo" *ngIf="user.SYTD_NOMBRE =='Denuncia'"  name="ios-paper-outline"></ion-icon>
+          <ion-icon class="Correo" *ngIf="user.SYTD_NOMBRE =='Documento para denuncia'"  name="ios-document-outline"></ion-icon>
+          <ion-icon class="Correo" *ngIf="user.SYTD_NOMBRE =='Ficha'"  name="ios-copy-outline"></ion-icon>
+          <ion-icon class="Correo" *ngIf="user.SYTD_NOMBRE =='Circular'"  name="ios-copy-outline"></ion-icon>
+          <ion-icon class="Correo" *ngIf="user.SYTD_NOMBRE =='Invitación'"  name="ios-people-outline"></ion-icon>
+        </ion-avatar>
+          <h2><b>{{ user.SYTD_NOMBRE | uppercase }}</b></h2>
+          <p>{{ user.DETA_DESCRIPCION }}</p>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="warning" *ngIf="user.SYED_NOMBRE =='Documento en captura'"></button>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="warning" *ngIf="user.SYED_NOMBRE =='Documento recepcionado'"></button>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="warning" *ngIf="user.SYED_NOMBRE =='Documento en seguimiento'"></button>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="secondary" *ngIf="user.SYED_NOMBRE =='Documento finalizado'"></button>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="danger" *ngIf="user.SYED_NOMBRE =='Documento rechazado'"></button>
+           <button ion-button icon-right item-end icon-left style="height:20%; width: 4%;" color="danger" *ngIf="user.SYED_NOMBRE =='Documento eliminado'"></button>
+      </ion-item>
+    </div>
+  </ion-list>
+      
+
+</ion-content>
