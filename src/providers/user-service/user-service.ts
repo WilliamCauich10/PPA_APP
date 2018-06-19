@@ -9,9 +9,9 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class UserServiceProvider {
-	IP="localhost";
+	// IP="localhost";
   // IP ="192.168.43.195";//cel
-  // IP="192.168.1.70";
+  IP="192.168.1.69";
 	getUsers() {
 		return this.http.get('http://'+this.IP+'/PPA_Movil/index.php/PPA_Proyecto/correo/');
 	}

@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserServiceProvider } from '../providers/user-service/user-service';
 // 
 import { Badge } from '@ionic-native/badge';
+// push 
+import { Push } from '@ionic-native/push';
 // Grafica
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations/animations';
 // import {GoogleChart} from 'angular2-google-chart/directives/angular2-google-chart.directive';
@@ -57,6 +59,7 @@ import { Badge } from '@ionic-native/badge';
     StatusBar,
     SplashScreen,
     Badge,
+    Push,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     UserServiceProvider
   ]
